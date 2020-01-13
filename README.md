@@ -1,13 +1,14 @@
-## Netcompany Blue Sky Template
+## Blue Sky Template
 
-This is an internal Netcompany template to be used to rapidly deploy future client projects.
+Info about this repo: TODO.
 
 
 ---
 
 ## How to clone this repository:
 
-TODO.
+
+How to clone this repo: TODO.
 
 ---
 
