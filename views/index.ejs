@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Company Name</title>
+		<link rel='stylesheet', href='public/styling/style.css'>
 	</head>
 	<body>
-		<h1> Index </h1>
+		<h1 class='only-header'> Sign in </h1>
 		<br>
-		<a href="/login"> Login</a>
+		<div clas='single-parent'>
+		<button href="/login" class='progress-btn' data-prevent-double-click='true'> Login</button>
+		</div>
+		<div class='single-parent'>
+		<button href='/sign_up' class='secondary-btn'>Create a new account</button>
+		</div>
+		<a href='/forgotten_password'>Forgotten password</a>
 	</body>
+	<footer></footer>
 </html>
