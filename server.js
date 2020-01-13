@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index')
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 
-app.use(express.static('public'))
+app.use('/public',express.static('public'))
 app.use(express.urlencoded());
 app.use(express.json());
 
