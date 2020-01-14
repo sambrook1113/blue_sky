@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	</head>
-	<body>
-		<h1> Login </h1>
-
-		<form action="/login" method="post">
-			<div>
-				<label for="name"> username: </label>
-				<input type="text" id="username" name="username" required> 
-			</div>
-			<br>
-			<div>
-				<label for="password"> password: </label>
-				<input type="password" id="password" name="password" required> 
-			</div>
-			<br>
-			<% if(message) { %>
-					<b style="color: red"><%= "*"+message %></b><br><br>
-				  <% } %>
-			<button type="submit"> Login </button>
-		</form>
-
-	</body>
+<head>
+	<%- include ('./Partials/head') %>
+</head>
+<body>
+	<h1> Login </h1>
+	<form action="/login" method="post">
+		<div>
+			<label for="name"> username: </label>
+			<input type="text" id="username" name="username" required> 
+		</div>
+		<br>
+		<div>
+			<label for="password"> password: </label>
+			<input type="password" id="password" name="password" required> 
+		</div>
+		<br>
+		<% if(message) { %>
+				<b style="color: red"><%= "*"+message %></b><br><br>
+			  <% } %>
+		<button class='progress-btn' type="submit"> Login </button>
+	</form>
+</body>
+<footer>
+	<%- include ('./Partials/footer') %>
+</footer>
 </html>

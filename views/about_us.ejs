@@ -2,27 +2,13 @@
 <html>
 
 <head>
-    <title>About Us Page</title>
-    <link rel="stylesheet" href="public/styling/style.css">
+    <%- include ('./Partials/head') %>
 </head>
 
 <body>
     <header id="main-header">
-        <div class="container">
-            <h1>Test header</h1>
-        </div>
+        <%- include ('./Partials/header') %>
     </header>
-
-    <nav class="navbar">
-        <div class="container">
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <h2>About Us</h2>
     <p>According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small
@@ -48,5 +34,7 @@
 
     </footer>
 </body>
-
+<footer>
+	<%- include ('./Partials/footer') %>
+</footer>
 </html>

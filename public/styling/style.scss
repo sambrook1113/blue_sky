@@ -16,6 +16,11 @@ p{
     @include text;
     font-size: 16 px;
 }
+label{
+    @include text;
+    font-size: 16 px;
+    font-weight: bold;
+}
 
 a{
     color: $nice-blue;
@@ -39,6 +44,9 @@ button:focus{
     border:2px solid $white;
 }
 
+.container:not(p){
+    justify-content: center;
+}
 .progress-btn{
     background-color: $green;
     color: $white;
@@ -65,4 +73,19 @@ button:focus{
 body > div{
     display: flex;
     justify-content: center;
+}
+body > h1{
+    align-content: center;
+}
+
+.input:invalid{
+    background-color: $red;
+}
+
+form > div{
+    justify-content: center;
+}
+
+form > div > a{
+    margin-top: 20px;
 }
