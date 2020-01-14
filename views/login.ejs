@@ -5,49 +5,24 @@
 </head>
 <body>
 	<h1> Login </h1>
-
 	<form action="/login" method="post">
 		<div>
-			<label for="name"> Username: </label>
+			<label for="name"> username: </label>
 			<input type="text" id="username" name="username" required> 
 		</div>
 		<br>
 		<div>
-			<label for="password"> Password: </label>
+			<label for="password"> password: </label>
 			<input type="text" id="password" name="password" required> 
 		</div>
-		<span hidden='true'>Incorrect username</span>
-		<div>
-			<a href='/forgotten_password'>Forgot your password</a>
-		</div>
 		<br>
+		<% if(message) { %>
+				<b style="color: red"><%= "*"+message %></b><br><br>
+			  <% } %>
 		<button class='progress-btn' type="submit"> Login </button>
 	</form>
 </body>
 <footer>
 	<%- include ('./Partials/footer') %>
 </footer>
-	<head>
-	</head>
-	<body>
-		<h1> Login </h1>
-
-		<form action="/login" method="post">
-			<div>
-				<label for="name"> username: </label>
-				<input type="text" id="username" name="username" required> 
-			</div>
-			<br>
-			<div>
-				<label for="password"> password: </label>
-				<input type="text" id="password" name="password" required> 
-			</div>
-			<br>
-			<% if(message) { %>
-					<b style="color: red"><%= "*"+message %></b><br><br>
-				  <% } %>
-			<button type="submit"> Login </button>
-		</form>
-
-	</body>
 </html>
