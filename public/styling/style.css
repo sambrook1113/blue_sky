@@ -81,6 +81,10 @@ body > div {
 	overflow:hidden;
 }
 
+.container h2{
+  margin = 0;
+}
+
 #main-header {
 	color: #fff;
 	background-color: black;
@@ -93,7 +97,8 @@ body > div {
 	font-size: 35px;
 	float:left;
 	position:relative;
-	bottom: 15px;
+  bottom: 15px;
+  color: #fff;
 }
 
 #navbar{
