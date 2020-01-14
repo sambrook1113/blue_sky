@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-//var query = require('../models/queries.js')
 var User = require('../models/User.js')
 
 router.get('/', (req,res)=>{
@@ -25,7 +24,8 @@ router.post('/login', async (req,res)=>{
 	}
 	if(temp_user!==null){
 		if(req.body.password==temp_user.password){
-			console.log("Password matches username!")
+			console.log(temp_user.firstname)
+			res.render('../views/dashboard',{user: temp_user})
 		}else{
 			console.log("Password does NOT match username!")
 		}
@@ -34,6 +34,10 @@ router.post('/login', async (req,res)=>{
 	}
 
 })
+
+router.get('/dashboard', (req,res)=> {
+	res.render('dashboard')
+	})
 
 router.post('/register',  async (req,res)=> {
 	let temp_user = null;
@@ -52,7 +56,8 @@ router.post('/register',  async (req,res)=> {
 			console.log("User saved");
 			res.render('usercreated')
 		  })
-	}
-})
+	}})
+
+
 
 module.exports = router
