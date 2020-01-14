@@ -97,21 +97,21 @@ body > div {
   color: #fff;
 }
 
-#navbar{
+.navbar{
 	background-color: #f3f2f1;
 	color:#fff;
 }
 
-#navbar ul{
+.navbar ul{
 	padding:0;
 	list-style:none;
 }
 
-#navbar li{
+.navbar li{
 	display: inline;
 }
 
-#navbar a{
+.navbar a{
 	position:relative;
 	left: 5px;
 	color:#1d70b8;
