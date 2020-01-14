@@ -11,7 +11,7 @@ router.get('/login', (req,res)=> {
 })
 
 router.get('/register', (req,res)=> {
-	res.render('register')
+	res.render('register', {message: false, firstname: false, surname: false, password: false})
 })
 
 router.post('/login', async (req,res)=>{
@@ -49,6 +49,8 @@ router.post('/register',  async (req,res)=> {
 	}
 	if(temp_user!=null){
 		console.log("Username taken")
+		res.render('register', {message: 'Username taken', firstname: req.body.firstname, surname: req.body.surname, password: req.body.password})
+
 	} else{
 		var new_user = new User( {username: req.body.username, password: req.body.password, firstname: req.body.firstname, lastname: req.body.surname, admin: false})
 		new_user.save(function (err, book) {
