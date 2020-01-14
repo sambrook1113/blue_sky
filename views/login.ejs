@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript">
-	
-	function(error){
-          if(error.responseText == 'showAlert'){
-              alert("Please enter correct user name and password.")
-          }
-  	}
-
-</script>
 	<head>
 	</head>
 	<body>
@@ -25,6 +16,9 @@
 				<input type="text" id="password" name="password" required> 
 			</div>
 			<br>
+			<% if(message) { %>
+					<b style="color: red"><%= "*"+message %></b><br><br>
+				  <% } %>
 			<button type="submit"> Login </button>
 		</form>
 

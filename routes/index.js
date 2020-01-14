@@ -7,7 +7,7 @@ router.get('/', (req,res)=>{
 })
 
 router.get('/login', (req,res)=> {
-	res.render('login')
+	res.render('login', {message:null})
 })
 
 router.get('/about_us', (req,res)=> {
@@ -29,15 +29,13 @@ router.post('/login', async (req,res)=>{
 	}
 	if(temp_user!==null){
 		if(req.body.password==temp_user.password){
-			console.log(temp_user.firstname)
 			res.render('../views/dashboard',{user: temp_user})
 		}else{
-			console.log("Password does NOT match username!")
+			res.render('login', {message: 'Password does not match username!'})
 		}
 	} else{
-		console.log("Invalid username")
+		res.render('login', {message: 'Username does not exist!'})
 	}
-
 })
 
 router.get('/dashboard', (req,res)=> {
