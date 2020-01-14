@@ -19,6 +19,9 @@
 			<div>
 				<label for="name"> username: </label>
 				<input type="text" id="username" name="username" required> 
+				<% if (message) { %>
+					<p><%= message %></p>
+				  <% } %>
 			</div>
 			<br>
 			<div>
