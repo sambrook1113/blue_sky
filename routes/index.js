@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 var User = require('../models/User.js')
+var bcrypt = require('bcrypt')
+const saltRounds = 10
+
 
 router.get('/', (req,res)=>{
 	res.render('index')
@@ -28,12 +31,13 @@ router.post('/login', async (req,res)=>{
 		return next(error)
 	}
 	if(temp_user!==null){
-		if(req.body.password==temp_user.password){
+		bcrypt.compare(req.body.password, temp_user.password, function (err, result) {
+		if(result){
 			res.render('../views/dashboard',{user: temp_user})
 		}else{
 			res.render('login', {message: 'Password does not match username!'})
 		}
-	} else{
+	})} else{
 		res.render('login', {message: 'Username does not exist!'})
 	}
 })
@@ -55,12 +59,14 @@ router.post('/register',  async (req,res)=> {
 		res.render('register', {message: 'Username taken', firstname: req.body.firstname, surname: req.body.surname, password: req.body.password})
 
 	} else{
-		var new_user = new User( {username: req.body.username, password: req.body.password, firstname: req.body.firstname, lastname: req.body.surname, admin: false})
-		new_user.save(function (err, book) {
-			if (err) return console.error(err);
-			console.log("User saved");
-			res.render('usercreated')
-		  })
+		bcrypt.hash(req.body.password, saltRounds, async function (err, hash){
+		    var new_user = new User( {username: req.body.username, password: hash,     firstname: req.body.firstname, lastname: req.body.surname, admin: false})
+		    try{
+				let user_saved = await new_user.save()
+			} catch(error){
+				return next(error)
+			}
+		})
 	}})
 
 
