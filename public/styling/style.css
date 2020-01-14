@@ -23,21 +23,21 @@ button {
   border: none;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-bottom: 2px solid #0b0c0c !important;
   font-family: Arial, Helvetica, sans-serif;
   color: #0b0c0c;
   font-size: 16px;
-  border-bottom-color: #0b0c0c;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
   /* Safari*/
 }
 
 button:hover {
-  border-color: #0b0c0c #0b0c0c #0b0c0c #0b0c0c;
+  border:2px solid #0b0c0c;
 }
 
 button:focus {
-  border-color: #ffffff #ffffff #ffffff #ffffff;
+  border:2px solid #ffffff;
 }
 
 .progress-btn {
@@ -47,8 +47,7 @@ button:focus {
 
 .secondary-btn {
   background-color: #f3f2f1;
-  color: #0b0c0c;
-  border-bottom-color: #626a6e;
+  border-bottom: #626a6e;
 }
 
 .regress-btn {

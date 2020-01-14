@@ -1,6 +1,7 @@
 @import '_variables.scss';
 @mixin text{ font-family: $standard; color: $black; }
-@mixin button-margins{padding: 10px; border: none; margin-top: 20px; margin-bottom: 20px;}
+@mixin button-margins{padding: 10px; border: none; margin-top: 20px; margin-bottom: 20px; 
+    border-bottom: 2px solid $black !important;}
 
 h1, h2, h3{
     @include text;
@@ -23,18 +24,19 @@ a{
 button{
     @include button-margins;
     @include text;
+    color: $black;
     font-size: 16px;
-    border-bottom-color: $black;
+    border-bottom: $black;
     transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s; /* Safari*/
 }
 
 button:hover{
-    border-color: $black $black $black $black;
+    border:2px solid $black;
 }
 
 button:focus{
-    border-color: $white $white $white $white;
+    border:2px solid $white;
 }
 
 .progress-btn{
@@ -44,8 +46,7 @@ button:focus{
 
 .secondary-btn{
     background-color: $light-grey;
-    color: $black;
-    border-bottom-color: $dark-grey;
+    border-bottom: $dark-grey;
 }
 
 .regress-btn{
