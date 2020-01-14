@@ -78,18 +78,14 @@ body > div {
 .container{
 	width:80%;
 	margin:auto;
-	overflow:hidden;
-}
-
-.container h2{
-  margin: 0;
+  overflow:hidden;
+  height:50px;
+	width: 1242px;
 }
 
 #main-header {
 	color: #fff;
 	background-color: black;
-	height:50px;
-	width: 1242px;
 }
 
 #main-header h1{
