@@ -8,12 +8,16 @@
         <form action="/register" method="post">
             <div>
 				<label for="name"> First Name: </label>
-				<input type="text" id="firstname" name="firstname" required> 
+				<input type="text" id="firstname" name="firstname" <% if (firstname) { %>
+					value = <%= firstname %>
+				  <% } %> required> 
 			</div>
             <br>
             <div>
 				<label for="name"> Surname: </label>
-				<input type="text" id="surname" name="surname" required> 
+				<input type="text" id="surname" name="surname" <% if (surname) { %>
+					value = <%= surname %>
+				  <% } %> required> 
 			</div>
 			<br>
 			<div>
@@ -26,7 +30,9 @@
 			<br>
 			<div>
 				<label for="password"> password: </label>
-				<input type="text" id="password" name="password" required> 
+				<input type="text" id="password" name="password" <% if (password) { %>
+					value = <%= password %>
+				  <% } %> required> 
 			</div>
 			<br>
 			<button type="submit"> Register </button>
