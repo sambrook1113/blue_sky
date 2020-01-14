@@ -75,4 +75,48 @@ body > div {
   justify-content: center;
 }
 
+.container{
+	width:80%;
+	margin:auto;
+	overflow:hidden;
+}
+
+#main-header {
+	color: #fff;
+	background-color: black;
+	height:50px;
+	width: 1242px;
+}
+
+#main-header h1{
+	font-weight: 700;
+	font-size: 35px;
+	float:left;
+	position:relative;
+	bottom: 15px;
+}
+
+#navbar{
+	background-color: #f3f2f1;
+	color:#fff;
+}
+
+#navbar ul{
+	padding:0;
+	list-style:none;
+}
+
+#navbar li{
+	display: inline;
+}
+
+#navbar a{
+	position:relative;
+	left: 5px;
+	color:#1d70b8;
+	text-decoration: none;
+	font-size: 18px;
+	padding-right: 20px;
+}
+
 /*# sourceMappingURL=style.css.map */
