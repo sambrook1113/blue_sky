@@ -59,13 +59,13 @@ router.post('/register',  async (req,res)=> {
 		res.render('register', {message: 'Username taken', firstname: req.body.firstname, surname: req.body.surname, password: req.body.password})
 
 	} else{
-		bcrypt.hash(req.body.password, saltRounds, function (err, hash){
+		bcrypt.hash(req.body.password, saltRounds, async function (err, hash){
 		    var new_user = new User( {username: req.body.username, password: hash,     firstname: req.body.firstname, lastname: req.body.surname, admin: false})
-		    new_user.save(function (err, book) {
-		    	if (err) return console.error(err);
-		    	console.log("User saved");
-		    	res.render('usercreated')
-			  })
+		    try{
+				let user_saved = await new_user.save()
+			} catch(error){
+				return next(error)
+			}
 		})
 	}})
 
