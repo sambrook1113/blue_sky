@@ -10,6 +10,11 @@ router.get('/login', (req,res)=> {
 	res.render('login')
 })
 
+router.get('/about_us', (req,res)=> {
+	res.render('about_us')
+})
+
+
 router.get('/register', (req,res)=> {
 	res.render('register', {message: false, firstname: false, surname: false, password: false})
 })
